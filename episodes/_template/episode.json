@@ -1,0 +1,35 @@
+{
+  "title": "TITLE",
+  "episode": 0,
+  "thinker": "WHO (YEAR)",
+  "unified_question": {"zh": "统一问题", "en": "The unified question?"},
+  "published": {},
+  "canvas": {"width": 1152, "height": 768, "fps": 30},
+  "media_dir": "media",
+  "timing": {"lead": 0.3, "gap": 0.45, "pause_after": {"2": 3.5}, "tail": 1.3, "max_shot": 14.0, "min_shot": 6.0},
+  "mix": {"narration": "narration/{lang}/seg{n:02d}.mp3", "music": "music/bgm.mp3", "music_ratio": 0.16},
+  "languages": {
+    "zh": {"script": "cjk", "platform": "Bilibili", "speech": [],
+           "subtitles": {"size": 30, "max_chars": 26, "bottom": 64},
+           "overlays": [
+             {"id": "title", "text": "标题", "size": 66, "x": "center", "y": 228, "start": {"t": 0.2}, "end": {"t": 4.2}},
+             {"id": "endcard", "text": "统一问题", "size": 40, "x": "center", "y": 322, "start": {"total": -5.5}, "end": {"total": 0}}
+           ]},
+    "en": {"script": "latin", "platform": "YouTube", "speech": [],
+           "subtitles": {"size": 30, "max_chars": 68, "bottom": 64},
+           "overlays": [
+             {"id": "title", "text": "Title", "size": 66, "x": "center", "y": 228, "start": {"t": 0.2}, "end": {"t": 4.2}},
+             {"id": "endcard", "text": "The unified question?", "size": 40, "x": "center", "y": 322, "start": {"total": -5.5}, "end": {"total": 0}}
+           ]}
+  },
+  "crops": {},
+  "shots": [
+    {"id": "1A", "segment": 1, "sentences": {"zh": [0, -1], "en": [0, -1]},
+     "spec": {"t": "clip", "src": "clips/1A.mp4"}},
+    {"id": "2A", "segment": 2, "sentences": {"zh": [0, -1], "en": [0, -1]},
+     "spec": {"t": "still", "src": "frames/K2.png", "z": [1.0, 1.05]}},
+    {"id": "3A", "segment": 3, "sentences": {"zh": [0, -1], "en": [0, -1]}, "hold": 4.0,
+     "guard": "music-only tail; only the question breathes",
+     "spec": {"t": "still", "src": "frames/K3.png", "z": [1.0, 1.03]}}
+  ]
+}

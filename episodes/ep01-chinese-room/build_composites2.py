@@ -2,10 +2,19 @@
 """Second batch of v3 assets: 4C split still, 2C degradation states,
 question-mark overlay PNG, 8D2 background, 4E blend still."""
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-import glob, random
+import random
 
-V2 = "/home/hatch/workspace/chinese-room-video/frames-v2"
-V3 = "/home/hatch/workspace/chinese-room-video/frames-v3"
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+from pipeline.common import find_font  # noqa: E402
+
+# media folder: argv[1], else $EPISODE_MEDIA, else ./media next to this script
+MEDIA = (sys.argv[1] if len(sys.argv) > 1 else
+         os.environ.get("EPISODE_MEDIA", os.path.join(os.path.dirname(os.path.abspath(__file__)), "media")))
+V2 = os.path.join(MEDIA, "frames-v2")
+V3 = os.path.join(MEDIA, "frames-v3")
 W, H = 1152, 768
 INK = (18, 20, 18)
 CREAM = (243, 238, 222)
@@ -23,15 +32,7 @@ def cover(img, box, tw, th):
     return c.crop((x, y, x+tw, y+th))
 
 def font(sz):
-    for pat in ("/usr/share/fonts/**/NotoSansCJK*.ttc", "/usr/share/fonts/**/NotoSans*.ttf",
-                "/usr/share/fonts/**/DejaVuSans*.ttf"):
-        hits = glob.glob(pat, recursive=True)
-        if hits:
-            try:
-                return ImageFont.truetype(hits[0], sz)
-            except Exception:
-                pass
-    return ImageFont.load_default()
+    return ImageFont.truetype(find_font(), sz)
 
 K2, K5, K10, K11 = (load(f"{V2}/K{n}.png") for n in (2, 5, 10, 11))
 F4D = load(f"{V3}/4D.png")

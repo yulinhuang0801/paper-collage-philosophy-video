@@ -3,10 +3,18 @@
 New-drawn area stays under 40%: panels/figures are crops of K-frames;
 only beams, doors, dividers and bubbles are drawn."""
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
-import glob
 
-V2 = "/home/hatch/workspace/chinese-room-video/frames-v2"
-V3 = "/home/hatch/workspace/chinese-room-video/frames-v3"
+import os
+import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+from pipeline.common import find_font  # noqa: E402
+
+# media folder: argv[1], else $EPISODE_MEDIA, else ./media next to this script
+MEDIA = (sys.argv[1] if len(sys.argv) > 1 else
+         os.environ.get("EPISODE_MEDIA", os.path.join(os.path.dirname(os.path.abspath(__file__)), "media")))
+V2 = os.path.join(MEDIA, "frames-v2")
+V3 = os.path.join(MEDIA, "frames-v3")
 W, H = 1152, 768
 INK = (18, 20, 18)
 
@@ -34,15 +42,7 @@ def paste_framed(base, img, xy, border=7):
     base.paste(img, (x, y))
 
 def font(sz):
-    for pat in ("/usr/share/fonts/**/NotoSansCJK*.ttc", "/usr/share/fonts/**/NotoSans*.ttf",
-                "/usr/share/fonts/**/DejaVuSans*.ttf"):
-        hits = glob.glob(pat, recursive=True)
-        if hits:
-            try:
-                return ImageFont.truetype(hits[0], sz)
-            except Exception:
-                pass
-    return ImageFont.load_default()
+    return ImageFont.truetype(find_font(), sz)
 
 K2, K6, K7, K8, K9, K11, K12 = (load(f"{V2}/K{n}.png") for n in (2, 6, 7, 8, 9, 11, 12))
 
