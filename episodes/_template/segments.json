@@ -1,0 +1,12 @@
+{
+ "zh": [
+  {"keyframe": "K1", "audio": "（开场钩子：一个观众甩不掉的具体问题。）"},
+  {"keyframe": "K2", "audio": "（思想实验本身，去掉学术前提，只留核心。）"},
+  {"keyframe": "K3", "audio": "（结尾：两边最强的论证，然后是统一问题。）"}
+ ],
+ "en": [
+  {"keyframe": "K1", "audio": "(Hook: one concrete question the viewer cannot shake off.)"},
+  {"keyframe": "K2", "audio": "(The thought experiment, academic preconditions stripped, core idea only.)"},
+  {"keyframe": "K3", "audio": "(Close: the strongest argument on each side, then the unified question.)"}
+ ]
+}

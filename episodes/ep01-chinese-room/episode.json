@@ -1,0 +1,1886 @@
+{
+  "title": "The Chinese Room",
+  "episode": 1,
+  "thinker": "John Searle (1980)",
+  "unified_question": {
+    "zh": "当 AI 给出一个完美的回答，它是理解了，还是只是在遵守规则？",
+    "en": "When AI gives a perfect answer, is it understanding, or only following rules?"
+  },
+  "published": {
+    "en": "https://www.youtube.com/watch?v=_cFOyDM56DM"
+  },
+  "canvas": {
+    "width": 1152,
+    "height": 768,
+    "fps": 30
+  },
+  "media_dir": "media",
+  "timing": {
+    "lead": 0.3,
+    "gap": 0.45,
+    "pause_after": {
+      "5": 3.5
+    },
+    "tail": 1.3,
+    "max_shot": 14.0,
+    "min_shot": 6.0
+  },
+  "mix": {
+    "narration": "narration/{lang}/seg{n:02d}.mp3",
+    "music": "music/bgm.mp3",
+    "music_ratio": 0.16
+  },
+  "languages": {
+    "zh": {
+      "script": "cjk",
+      "platform": "Bilibili",
+      "speech": [
+        23.5,
+        39.7,
+        32.5,
+        46.8,
+        62.0,
+        48.8,
+        22.2,
+        44.7,
+        26.4
+      ],
+      "audio": "audio/audio-zh.m4a",
+      "subtitles": {
+        "size": 30,
+        "max_chars": 26,
+        "bottom": 64
+      },
+      "overlays": [
+        {
+          "id": "title1",
+          "text": "中文房间",
+          "size": 66,
+          "x": "center",
+          "y": 228,
+          "start": {
+            "t": 0.2
+          },
+          "end": {
+            "t": 4.2
+          }
+        },
+        {
+          "id": "title2",
+          "text": "当 AI 给出完美回答时，它真的懂吗？",
+          "size": 30,
+          "x": "center",
+          "y": 340,
+          "start": {
+            "t": 0.2
+          },
+          "end": {
+            "t": 4.2
+          }
+        },
+        {
+          "id": "year",
+          "text": "1980",
+          "size": 46,
+          "x": 56,
+          "y": 48,
+          "start": {
+            "shot": "4A",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "4A",
+            "at": "end",
+            "offset": -0.2
+          },
+          "box": true
+        },
+        {
+          "id": "door1",
+          "text": "机器永远不会懂",
+          "size": 34,
+          "x": {
+            "center_at": 320
+          },
+          "y": 58,
+          "start": {
+            "shot": "8D1",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "8D1",
+            "at": "end"
+          }
+        },
+        {
+          "id": "door2",
+          "text": "AI 已经懂了",
+          "size": 34,
+          "x": {
+            "center_at": 832
+          },
+          "y": 58,
+          "start": {
+            "shot": "8D1",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "8D1",
+            "at": "end"
+          }
+        },
+        {
+          "id": "say",
+          "text": "说出对的词",
+          "size": 54,
+          "x": "left-half",
+          "y": 322,
+          "start": {
+            "phrase": "能说出对的词"
+          },
+          "end": {
+            "shot": "8D2",
+            "at": "end"
+          }
+        },
+        {
+          "id": "mean",
+          "text": "知道意思",
+          "size": 54,
+          "x": "right-half",
+          "y": 322,
+          "start": {
+            "phrase": "知道这些词是什么意思"
+          },
+          "end": {
+            "shot": "8D2",
+            "at": "end"
+          }
+        },
+        {
+          "id": "question",
+          "text": "当 AI 给出一个完美的回答，它是理解了，还是只是在遵守规则？",
+          "size": 36,
+          "x": "center",
+          "y": 88,
+          "start": {
+            "shot": "9A",
+            "offset": 1.0
+          },
+          "end": {
+            "shot": "9A",
+            "at": "end"
+          }
+        },
+        {
+          "id": "endcard1",
+          "text": "当 AI 给出一个完美的回答，",
+          "size": 40,
+          "x": "center",
+          "y": 284,
+          "start": {
+            "total": -5.5
+          },
+          "end": {
+            "total": 0
+          }
+        },
+        {
+          "id": "endcard2",
+          "text": "它是理解了，还是只是在遵守规则？",
+          "size": 40,
+          "x": "center",
+          "y": 360,
+          "start": {
+            "total": -5.5
+          },
+          "end": {
+            "total": 0
+          }
+        },
+        {
+          "id": "qmark-5A",
+          "image": "frames-v3/qmark.png",
+          "width": 104,
+          "x": 748,
+          "y": 84,
+          "bob": [
+            6,
+            3.1
+          ],
+          "start": {
+            "shot": "5A"
+          },
+          "end": {
+            "shot": "5A",
+            "at": "end"
+          }
+        },
+        {
+          "id": "qmark-5E",
+          "image": "frames-v3/qmark.png",
+          "width": 104,
+          "x": 748,
+          "y": 84,
+          "bob": [
+            6,
+            3.1
+          ],
+          "start": {
+            "shot": "5E"
+          },
+          "end": {
+            "shot": "5E",
+            "at": "end"
+          }
+        }
+      ],
+      "total": 355.53
+    },
+    "en": {
+      "script": "latin",
+      "platform": "YouTube",
+      "speech": [
+        22.77,
+        44.97,
+        29.46,
+        50.97,
+        64.58,
+        53.53,
+        24.55,
+        36.93,
+        26.01
+      ],
+      "audio": "audio/audio-en.m4a",
+      "subtitles": {
+        "size": 30,
+        "max_chars": 68,
+        "bottom": 64
+      },
+      "overlays": [
+        {
+          "id": "title1",
+          "text": "The Chinese Room",
+          "size": 66,
+          "x": "center",
+          "y": 228,
+          "start": {
+            "t": 0.2
+          },
+          "end": {
+            "t": 4.2
+          }
+        },
+        {
+          "id": "title2",
+          "text": "Could a Machine Understand You?",
+          "size": 30,
+          "x": "center",
+          "y": 340,
+          "start": {
+            "t": 0.2
+          },
+          "end": {
+            "t": 4.2
+          }
+        },
+        {
+          "id": "year",
+          "text": "1980",
+          "size": 46,
+          "x": 56,
+          "y": 48,
+          "start": {
+            "shot": "4A",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "4A",
+            "at": "end",
+            "offset": -0.2
+          }
+        },
+        {
+          "id": "door1",
+          "text": "Machines never understand",
+          "size": 30,
+          "x": {
+            "center_at": 320
+          },
+          "y": 58,
+          "start": {
+            "shot": "8D1",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "8D1",
+            "at": "end"
+          }
+        },
+        {
+          "id": "door2",
+          "text": "AI already understands",
+          "size": 30,
+          "x": {
+            "center_at": 832
+          },
+          "y": 58,
+          "start": {
+            "shot": "8D1",
+            "offset": 0.5
+          },
+          "end": {
+            "shot": "8D1",
+            "at": "end"
+          }
+        },
+        {
+          "id": "say",
+          "text": "Saying the right words",
+          "size": 40,
+          "x": "left-half",
+          "y": 322,
+          "start": {
+            "phrase": "Being able to produce the right words"
+          },
+          "end": {
+            "shot": "8D2",
+            "at": "end"
+          }
+        },
+        {
+          "id": "mean",
+          "text": "Knowing what they mean",
+          "size": 40,
+          "x": "right-half",
+          "y": 322,
+          "start": {
+            "phrase": "Knowing what those words mean"
+          },
+          "end": {
+            "shot": "8D2",
+            "at": "end"
+          }
+        },
+        {
+          "id": "question1",
+          "text": "When AI gives a perfect answer,",
+          "size": 36,
+          "x": "center",
+          "y": 80,
+          "start": {
+            "shot": "9A",
+            "offset": 1.0
+          },
+          "end": {
+            "shot": "9A",
+            "at": "end"
+          }
+        },
+        {
+          "id": "question2",
+          "text": "is it understanding, or only following rules?",
+          "size": 36,
+          "x": "center",
+          "y": 152,
+          "start": {
+            "shot": "9A",
+            "offset": 1.0
+          },
+          "end": {
+            "shot": "9A",
+            "at": "end"
+          }
+        },
+        {
+          "id": "endcard1",
+          "text": "When AI gives a perfect answer,",
+          "size": 40,
+          "x": "center",
+          "y": 284,
+          "start": {
+            "total": -5.5
+          },
+          "end": {
+            "total": -0.15
+          }
+        },
+        {
+          "id": "endcard2",
+          "text": "is it understanding, or only following rules?",
+          "size": 40,
+          "x": "center",
+          "y": 360,
+          "start": {
+            "total": -5.5
+          },
+          "end": {
+            "total": -0.15
+          }
+        },
+        {
+          "id": "qmark-5A",
+          "image": "frames-v3/qmark.png",
+          "width": 104,
+          "x": 748,
+          "y": 84,
+          "bob": [
+            6,
+            3.1
+          ],
+          "start": {
+            "shot": "5A"
+          },
+          "end": {
+            "shot": "5A",
+            "at": "end"
+          }
+        },
+        {
+          "id": "qmark-5E",
+          "image": "frames-v3/qmark.png",
+          "width": 104,
+          "x": 748,
+          "y": 84,
+          "bob": [
+            6,
+            3.1
+          ],
+          "start": {
+            "shot": "5E"
+          },
+          "end": {
+            "shot": "5E",
+            "at": "end"
+          }
+        }
+      ],
+      "total": 362.47
+    }
+  },
+  "crops": {
+    "FIG": [
+      0.28,
+      0.22,
+      0.62,
+      0.75
+    ],
+    "BOOK": [
+      0.46,
+      0.34,
+      0.86,
+      0.86
+    ],
+    "SLOT": [
+      0.74,
+      0.26,
+      1.0,
+      0.76
+    ],
+    "HANDS": [
+      0.33,
+      0.4,
+      0.6,
+      0.7
+    ]
+  },
+  "shots": [
+    {
+      "id": "1A",
+      "segment": 1,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0,
+          1
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/1A.mp4"
+      }
+    },
+    {
+      "id": "1B",
+      "segment": 1,
+      "sentences": {
+        "zh": [
+          1
+        ],
+        "en": [
+          2,
+          4
+        ]
+      },
+      "short": {
+        "kind": "performance",
+        "note": {
+          "zh": "三个气泡依次亮起，正好是表演节奏",
+          "en": "three bubbles in a row, a performance beat"
+        }
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v3/1B.png",
+        "z": [
+          1.0,
+          1.07
+        ]
+      }
+    },
+    {
+      "id": "1C",
+      "segment": 1,
+      "sentences": {
+        "zh": [
+          2,
+          3
+        ],
+        "en": [
+          5,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/1C.mp4"
+      }
+    },
+    {
+      "id": "2A",
+      "segment": 2,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "short": {
+        "kind": "transition",
+        "note": {
+          "zh": "盒→房变形是转场镜，不与 2B 合并",
+          "en": "box-to-room morph"
+        }
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K1.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.52
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.48
+          ]
+        ],
+        "xf": 0.5
+      }
+    },
+    {
+      "id": "2B",
+      "segment": 2,
+      "sentences": {
+        "zh": [
+          1
+        ],
+        "en": [
+          1,
+          2
+        ]
+      },
+      "short": {
+        "kind": "loop",
+        "note": {
+          "zh": "纸片滑入循环×3 填满",
+          "en": "paper slides in three times"
+        }
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v2/K2.png",
+        "crop": "SLOT",
+        "z": [
+          1.0,
+          1.1
+        ]
+      }
+    },
+    {
+      "id": "2C",
+      "segment": 2,
+      "sentences": {
+        "zh": [
+          2,
+          3
+        ],
+        "en": [
+          3,
+          5
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/2C-1.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.34
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/2C-2.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.33
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/2C-3.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.33
+          ]
+        ],
+        "xf": 0.3
+      }
+    },
+    {
+      "id": "2D",
+      "segment": 2,
+      "sentences": {
+        "zh": [
+          4,
+          9
+        ],
+        "en": [
+          6,
+          -1
+        ]
+      },
+      "staged": "流水线快切（内部多段）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.24
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "BOOK",
+              "z": [
+                1.0,
+                1.06
+              ]
+            },
+            0.38
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "SLOT",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.095
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "HANDS",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.095
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "SLOT",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.095
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "HANDS",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.095
+          ]
+        ],
+        "xf": 0.25
+      }
+    },
+    {
+      "id": "3A",
+      "segment": 3,
+      "sentences": {
+        "zh": [
+          0,
+          1
+        ],
+        "en": [
+          0
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K10.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.5
+          ],
+          [
+            {
+              "t": "clip",
+              "src": "clips-v2/K2.mp4"
+            },
+            0.5
+          ]
+        ],
+        "xf": 0.35
+      }
+    },
+    {
+      "id": "3B",
+      "segment": 3,
+      "sentences": {
+        "zh": [
+          2,
+          3
+        ],
+        "en": [
+          1,
+          2
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K10.png",
+              "crop": [
+                0.03,
+                0.18,
+                0.97,
+                0.85
+              ],
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.5
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "BOOK",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.5
+          ]
+        ],
+        "xf": 0.06
+      }
+    },
+    {
+      "id": "3C-1",
+      "segment": 3,
+      "sentences": {
+        "zh": [
+          4,
+          6
+        ],
+        "en": [
+          3,
+          4
+        ]
+      },
+      "short": {
+        "kind": "performance",
+        "note": {
+          "zh": "问答快切",
+          "en": "quick question-and-answer cut"
+        }
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v2/K10.png",
+        "crop": [
+          0.03,
+          0.15,
+          0.97,
+          0.88
+        ],
+        "z": [
+          1.0,
+          1.06
+        ]
+      }
+    },
+    {
+      "id": "3C-2",
+      "segment": 3,
+      "sentences": {
+        "zh": [
+          7,
+          8
+        ],
+        "en": [
+          5,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.42
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "FIG",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.58
+          ]
+        ],
+        "xf": 0.4
+      }
+    },
+    {
+      "id": "4A",
+      "segment": 4,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "short": {
+        "kind": "introduction",
+        "note": {
+          "zh": "塞尔出场是引入镜",
+          "en": "Searle enters"
+        }
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/K12.mp4"
+      }
+    },
+    {
+      "id": "4B",
+      "segment": 4,
+      "sentences": {
+        "zh": [
+          1,
+          3
+        ],
+        "en": [
+          1,
+          3
+        ]
+      },
+      "staged": "元素替换三段（纸→代码→气泡）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.34
+          ],
+          [
+            {
+              "t": "clip",
+              "src": "clips-v2/K4.mp4"
+            },
+            0.36
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K4.png",
+              "crop": [
+                0.55,
+                0.15,
+                0.97,
+                0.75
+              ],
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.3
+          ]
+        ],
+        "xf": 0.35
+      }
+    },
+    {
+      "id": "4C",
+      "segment": 4,
+      "sentences": {
+        "zh": [
+          4,
+          5
+        ],
+        "en": [
+          4,
+          6
+        ]
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v3/4C.png",
+        "z": [
+          1.0,
+          1.04
+        ]
+      }
+    },
+    {
+      "id": "4D",
+      "segment": 4,
+      "sentences": {
+        "zh": [
+          6,
+          7
+        ],
+        "en": [
+          7,
+          8
+        ]
+      },
+      "staged": "打字机逐字+屏幕光渐亮（内部递进）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "clip",
+              "src": "clips-v3/4D.mp4"
+            },
+            0.71
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/4D.png",
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.29
+          ]
+        ],
+        "xf": 0.3
+      }
+    },
+    {
+      "id": "4E",
+      "segment": 4,
+      "sentences": {
+        "zh": [
+          8
+        ],
+        "en": [
+          9,
+          -1
+        ]
+      },
+      "short": {
+        "kind": "transition",
+        "note": {
+          "zh": "叠影拉远收束镜",
+          "en": "double-exposure pull-back closes the segment"
+        }
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/4D.png",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.45
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/4E-blend.png",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.55
+          ]
+        ],
+        "xf": 1.2
+      }
+    },
+    {
+      "id": "5A",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          0,
+          1
+        ],
+        "en": [
+          0,
+          1
+        ]
+      },
+      "short": {
+        "kind": "performance",
+        "note": {
+          "zh": "转向观众+问号",
+          "en": "turns to the viewer, question mark"
+        }
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/5A.mp4"
+      }
+    },
+    {
+      "id": "5B",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          2,
+          3
+        ],
+        "en": [
+          2,
+          3
+        ]
+      },
+      "spec": {
+        "t": "vpan",
+        "src": "frames-v2/K5.png",
+        "crop": [
+          0.005,
+          0.01,
+          0.245,
+          0.99
+        ]
+      }
+    },
+    {
+      "id": "5C",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          4,
+          6
+        ],
+        "en": [
+          4,
+          5
+        ]
+      },
+      "spec": {
+        "t": "vpan",
+        "src": "frames-v2/K5.png",
+        "crop": [
+          0.255,
+          0.01,
+          0.495,
+          0.99
+        ]
+      }
+    },
+    {
+      "id": "5D1",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          7,
+          10
+        ],
+        "en": [
+          6,
+          11
+        ]
+      },
+      "staged": "记忆蒙太奇四格（内部多段）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.17
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "crop": [
+                0.02,
+                0.05,
+                0.28,
+                0.42
+              ],
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.19
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "crop": [
+                0.71,
+                0.04,
+                0.96,
+                0.44
+              ],
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.19
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "crop": [
+                0.02,
+                0.57,
+                0.27,
+                0.96
+              ],
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.19
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "crop": [
+                0.75,
+                0.61,
+                0.98,
+                0.95
+              ],
+              "z": [
+                1.0,
+                1.05
+              ]
+            },
+            0.19
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v3/5D1.png",
+              "z": [
+                1.0,
+                1.02
+              ]
+            },
+            0.07
+          ]
+        ],
+        "xf": 0.35
+      }
+    },
+    {
+      "id": "5D2",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          11,
+          13
+        ],
+        "en": [
+          12,
+          15
+        ]
+      },
+      "spec": {
+        "t": "vpan",
+        "src": "frames-v2/K5.png",
+        "crop": [
+          0.755,
+          0.01,
+          0.995,
+          0.99
+        ],
+        "sat": 0.55
+      }
+    },
+    {
+      "id": "5E",
+      "segment": 5,
+      "sentences": {
+        "zh": [
+          14,
+          16
+        ],
+        "en": [
+          16,
+          -1
+        ]
+      },
+      "guard": "last ~4 s are music only; only the question mark breathes",
+      "spec": {
+        "t": "still",
+        "src": "frames-v2/K1.png",
+        "crop": [
+          0.24,
+          0.06,
+          0.82,
+          0.86
+        ],
+        "z": [
+          1.0,
+          1.045
+        ]
+      }
+    },
+    {
+      "id": "6A",
+      "segment": 6,
+      "sentences": {
+        "zh": [
+          0,
+          2
+        ],
+        "en": [
+          0,
+          2
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "crop": "FIG",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.45
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K2.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.55
+          ]
+        ],
+        "xf": 0.4
+      }
+    },
+    {
+      "id": "6B",
+      "segment": 6,
+      "sentences": {
+        "zh": [
+          3,
+          5
+        ],
+        "en": [
+          3,
+          5
+        ]
+      },
+      "staged": "四部件高亮接力（内部多段）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K6.png",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.2
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K6.png",
+              "crop": [
+                0.3,
+                0.2,
+                0.8,
+                0.85
+              ],
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.27
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K6.png",
+              "crop": [
+                0.02,
+                0.1,
+                0.45,
+                0.7
+              ],
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.27
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K6.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.26
+          ]
+        ],
+        "xf": 0.3
+      }
+    },
+    {
+      "id": "6C-1",
+      "segment": 6,
+      "sentences": {
+        "zh": [
+          6,
+          9
+        ],
+        "en": [
+          6,
+          9
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/K11.mp4",
+        "crop": [
+          0.22,
+          0.12,
+          0.78,
+          0.88
+        ]
+      }
+    },
+    {
+      "id": "6C-2",
+      "segment": 6,
+      "sentences": {
+        "zh": [
+          10
+        ],
+        "en": [
+          10
+        ]
+      },
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K11.png",
+              "crop": [
+                0.32,
+                0.25,
+                0.68,
+                0.75
+              ],
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.4
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K11.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.6
+          ]
+        ],
+        "xf": 0.4
+      }
+    },
+    {
+      "id": "6D",
+      "segment": 6,
+      "sentences": {
+        "zh": [
+          11,
+          12
+        ],
+        "en": [
+          11,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v2/K6.mp4"
+      }
+    },
+    {
+      "id": "7A-1",
+      "segment": 7,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "end_at": {
+        "zh": "一个人扮演了整个系统",
+        "en": "and personally carried out"
+      },
+      "short": {
+        "kind": "motion",
+        "note": {
+          "zh": "书页螺旋飞入是运动镜",
+          "en": "pages spiral in"
+        }
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v2/K7.png",
+        "z": [
+          1.0,
+          1.06
+        ]
+      }
+    },
+    {
+      "id": "7A-2",
+      "segment": 7,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "start_at": {
+        "zh": "一个人扮演了整个系统",
+        "en": "and personally carried out"
+      },
+      "hold": 4.0,
+      "spec": {
+        "t": "freeze",
+        "src": "frames-v2/K7.png"
+      }
+    },
+    {
+      "id": "7B",
+      "segment": 7,
+      "sentences": {
+        "zh": [
+          1,
+          2
+        ],
+        "en": [
+          1,
+          2
+        ]
+      },
+      "short": {
+        "kind": "loop",
+        "note": {
+          "zh": "搬符号循环成立",
+          "en": "symbol-moving loop"
+        }
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/7B.mp4"
+      }
+    },
+    {
+      "id": "7C",
+      "segment": 7,
+      "sentences": {
+        "zh": [
+          3,
+          4
+        ],
+        "en": [
+          3,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v3/7C.png",
+        "z": [
+          1.0,
+          1.02
+        ]
+      }
+    },
+    {
+      "id": "8A",
+      "segment": 8,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "short": {
+        "kind": "event",
+        "note": {
+          "zh": "墙倒下是事件镜，与 8B 同底图连续",
+          "en": "the wall falls; same base picture as 8B"
+        }
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v2/K8.mp4"
+      }
+    },
+    {
+      "id": "8B",
+      "segment": 8,
+      "sentences": {
+        "zh": [
+          1
+        ],
+        "en": [
+          1
+        ]
+      },
+      "staged": "四组连线依次成立（内部多段）",
+      "spec": {
+        "t": "sub",
+        "parts": [
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K8.png",
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.25
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K8.png",
+              "crop": [
+                0.05,
+                0.35,
+                0.5,
+                0.9
+              ],
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.25
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K8.png",
+              "crop": [
+                0.45,
+                0.05,
+                0.95,
+                0.55
+              ],
+              "z": [
+                1.0,
+                1.04
+              ]
+            },
+            0.25
+          ],
+          [
+            {
+              "t": "still",
+              "src": "frames-v2/K8.png",
+              "z": [
+                1.0,
+                1.03
+              ]
+            },
+            0.25
+          ]
+        ],
+        "xf": 0.3
+      }
+    },
+    {
+      "id": "8C",
+      "segment": 8,
+      "sentences": {
+        "zh": [
+          2,
+          3
+        ],
+        "en": [
+          2,
+          3
+        ]
+      },
+      "spec": {
+        "t": "pan",
+        "src": "frames-v3/8C.png"
+      }
+    },
+    {
+      "id": "8D1",
+      "segment": 8,
+      "sentences": {
+        "zh": [
+          4,
+          5
+        ],
+        "en": [
+          4,
+          5
+        ]
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v3/8D1.png",
+        "z": [
+          1.0,
+          1.03
+        ]
+      }
+    },
+    {
+      "id": "8D2",
+      "segment": 8,
+      "sentences": {
+        "zh": [
+          6,
+          7
+        ],
+        "en": [
+          6,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v3/8D2bg.png",
+        "z": [
+          1.0,
+          1.02
+        ]
+      }
+    },
+    {
+      "id": "9A",
+      "segment": 9,
+      "sentences": {
+        "zh": [
+          0
+        ],
+        "en": [
+          0
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/9A.mp4"
+      }
+    },
+    {
+      "id": "9B",
+      "segment": 9,
+      "sentences": {
+        "zh": [
+          1,
+          2
+        ],
+        "en": [
+          1,
+          2
+        ]
+      },
+      "spec": {
+        "t": "clip",
+        "src": "clips-v3/9B-v2.mp4"
+      }
+    },
+    {
+      "id": "9C",
+      "segment": 9,
+      "sentences": {
+        "zh": [
+          3,
+          4
+        ],
+        "en": [
+          3,
+          -1
+        ]
+      },
+      "spec": {
+        "t": "still",
+        "src": "frames-v2/K9.png",
+        "z": [
+          1.0,
+          1.06
+        ]
+      }
+    }
+  ]
+}
