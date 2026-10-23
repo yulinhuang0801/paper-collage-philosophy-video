@@ -76,6 +76,19 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
 
 Episode 1's QA frames caught an English 8D2 subtitle overflow. They did not catch the Chinese end card that ran the full width of the frame, which the new text-fit check found. Keep both checks.
 
+## Choosing the video method
+
+Only about 31% of episode 1's screen time (13 of 39 shots) is AI video. The rest is stills with pushes, pans and crops. Keep it that way: use motion where a face or figure needs life, and nowhere else. Background notes and sources are in `references/video-generation-research.md` (unverified, mostly secondary sources).
+
+Before generating a whole episode's clips, run a **style test** on one approved face frame and one object frame:
+
+1. Try every candidate model, plus the no-AI option (layer the collage pieces and move them at different rates, a 2.5D parallax).
+2. Judge each result at the midframe and the last frame, not just the first. Reject any that drift toward a realistic face, add 3D shading, move the paper pieces as if they were soft, or add text.
+3. Write down the model name and version, the settings, the cost per second and the number of tries needed, in `storyboard.md`. Switching model between episodes changes the look and needs the user's yes.
+4. Prefer the cheapest option that passes. A shot that passes as a push-in on a still stays a push-in.
+
+The opening matters most: episode 1's hook is built from clips (1A, 1C) and 55% of viewers left within 3 s. Test the hook shot with and without motion before the episode is built, and see "Hypotheses to test in episode 2".
+
 ## Write the script
 
 - Write the narration into `segments.json`: one entry per segment, with a keyframe id and the exact text the TTS reads. Keep punctuation light, because the TTS reads it literally.
@@ -96,7 +109,7 @@ Episode 1's QA frames caught an English 8D2 subtitle overflow. They did not catc
 
 - Generate keyframes first, and pass gate 3 on the anchor face. Face shots inherit from it.
 - Cut the number of genuinely new images hard before generating. Reuse approved frames, crop regions out of them, and build composites whose newly drawn area stays under 40% (`episodes/ep01-chinese-room/build_composites*.py` show how).
-- Route shots with faces through image-to-video so the faces move naturally. Use stills with camera moves for objects, rooms and diagrams.
+- Route shots with faces through image-to-video (or the parallax alternative, see "Choosing the video method") so the faces move naturally. Use stills with camera moves for objects, rooms and diagrams.
 - Check the midframe of every generated clip. If it drifted toward a realistic face, regenerate it with the constraint line above and check the replacement the same way.
 - Check a source image's layout before writing crop boxes. Episode 1 lost time to a "four panel" image that was really four vertical strips. Those became `vpan` shots, not quadrant crops.
 - Write a disposition for every deviation from the storyboard (for example, a motion that became a push in) so the delivery note can disclose it honestly.
