@@ -59,7 +59,7 @@ Negative / constraint line for video models (they drift toward realism on this s
 
 ## Tool stack
 
-Record the actual tools in the episode's `storyboard.md` so the next episode can match the look and voice. Episode 1 did not record them. Fill this table in when you learn them, and treat a change of model or voice as a style change that needs the user's yes.
+Record the actual tools in the episode's `storyboard.md` so the next episode can match the look and voice. Episode 1 did not record them, and they can't be recovered from the files. **Before starting episode 2, ask the user (or the agent that made episode 1) which tools were used, and fill this table in.** and treat a change of model or voice as a style change that needs the user's yes.
 
 | Stage | Requirement | Episode 1 |
 |---|---|---|
@@ -83,6 +83,7 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
 - Give every shot a motion strategy from the builder's grammar: `clip` (natural motion), `still` (slow push in), `freeze`, `pan`, `vpan` (tall strip image), and `sub` (staged parts with crossfades).
 - Plan the colour arc as small pushes from segment to segment, with no jump of a whole segment's colour between neighbouring shots.
 - Mark guard points and treat them as uncompressible. In `episode.json`, give the shot a `hold` (seconds) and a `guard` note. Episode 1 had two: a music-only tail of about 4 s where only a question mark breathes (5E), and a halo still held for 4 s (7A-2).
+- **Hook check.** Before gate 2, write down what the cover and title promise, then check that the first 3 seconds of each language deliver it, in words, not just mood. Episode 1's cover beat 77% of similar videos on Bilibili, yet 55.1% of viewers left within 3 s: the click worked and the opening did not hold. Put the check result in `storyboard.md`.
 - Write `storyboard.md` and pass gate 2.
 
 ## Produce the images and clips
@@ -131,6 +132,19 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
 - The Bilibili file picker may resist automated upload. Hand the live browser to the user to pick the file, then take control back and finish the form.
 - Record the published links in `episode.json` → `published`.
 
+## Measure the result
+
+Detailed Bilibili data may not be kept forever, so record it on a schedule. Fill in `<episode>/results.md` (copy it from `episodes/_template/results.md`) at 48 hours, 7 days and 30 days:
+
+- Plays, and the share from non-followers.
+- Cover click-through rate against similar videos.
+- 3-second exit rate, and the average watch point as a share of the length.
+- The retention curve (留存分布) and the loss trend (流失趋势). Match each drop to the shot on screen at that second, using `timing-<lang>.md`. Save a screenshot of each chart.
+- Interaction rate (likes, coins, comments) and follower conversion.
+- YouTube: views, average view duration and the retention graph, the same way.
+
+State the sample size next to every number. Under about 100 plays, a drop of one or two viewers is an anecdote: write it as a hypothesis and do not change a rule because of it. Revisit the rules once an episode passes roughly 100 viewers, or two episodes can be compared.
+
 ## Episode 1 record
 
 - **The Chinese Room** (John Searle, 1980). 355.5 s in Chinese and 362.5 s in English, 39 shots per version, published to YouTube: https://www.youtube.com/watch?v=_cFOyDM56DM
@@ -140,3 +154,13 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
   - The original builder started the English cut's first picture at 0.3 s instead of 0, so every English picture runs 0.3 s ahead of its narration.
   - The Chinese end card was as wide as the frame, so its box touched both edges.
   - In the English cut, the boxes behind the two-line question and the two-line end card overlapped, leaving a darker band.
+- **Day-2 results** (Bilibili, 76 plays, so not conclusive) are in `references/episode-1-results.md`.
+
+## Hypotheses to test in episode 2
+
+These come from episode 1's day-2 data. They are not rules yet.
+
+1. **The opening loses viewers who clicked.** 55.1% left within 3 s although the cover beat 77% of similar videos. Test an opening that states the question within the first 3 s, in the first words of the narration.
+2. **Viewers drop where the story turns abstract.** About 4 of the ~9 who left did so at 1:40 to 2:00 (segment 4, Searle and the computer analogy). Test whether keeping a concrete image on screen through the abstract argument holds them.
+3. **The longest shot may not matter.** Shot 2D (23.5 s) saw at most one drop. Don't shorten it on this evidence.
+4. **Viewers who stay, stay.** About 10% watched nearly to the end, and the curve held flat from about 2:10. Check whether that share grows with more plays.
