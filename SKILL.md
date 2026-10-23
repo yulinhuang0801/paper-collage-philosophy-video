@@ -59,16 +59,35 @@ Negative / constraint line for video models (they drift toward realism on this s
 
 ## Tool stack
 
-Record the actual tools in the episode's `storyboard.md` so the next episode can match the look and voice. Episode 1 did not record them. Fill this table in when you learn them, and treat a change of model or voice as a style change that needs the user's yes.
+Record the actual tools in the episode's `storyboard.md` so the next episode can match the look and voice. Treat a change of model or voice as a style change that needs the user's yes.
 
-| Stage | Requirement | Episode 1 |
+Episode 1 was made by the agent Muse, using its built-in tools. Its own report (2026-10-23) is below. **Muse named the tools by role only, so the underlying model names and versions are still unknown.** Ask Muse for them (and for the original `frames-*`, `clips-*` and `audio-*` folders) before relying on a specific look.
+
+| Stage | Requirement | Episode 1 (as reported by Muse) |
 |---|---|---|
-| Keyframes | text-to-image; also image-to-image from approved frames | not recorded |
-| Face clips | image-to-video from an approved keyframe, about 5–10 s | not recorded |
-| Narration | one voice per language, read from `tts-text` files | not recorded |
-| Music | one reflective track, looped under the voice | not recorded |
+| Keyframes | text-to-image; also image-to-image from approved frames | Muse's image generation tool: the `frames-v2` set, nine new `frames-v3` images (1B, 4D, 5D1, 7B and others), and a replacement K1 hook face after the first looked unsettling. Model not named. |
+| Composites | crop and paste from approved frames | `episodes/ep01-chinese-room/build_composites*.py`: 7C, 8C, 8D1, 9B from existing art |
+| Face clips | image-to-video from an approved keyframe, about 5–10 s | Muse's video generation tool: K1, K2, K4, K5, K6, K8 (`clips-v2`); 1A, 1C, 5A, 9A, 9B-v2, 7B, K11, K12, 4D (`clips-v3`). The first 9B drifted into a realistic face and was regenerated. Model not named. |
+| Narration | one voice per language, read from `tts-text` files | Muse's text-to-speech tool, voice `avocado_v2:MAI_03`, speed 85, both languages, 18 segment files (`audio-v2`) |
+| Music | one reflective track, looped under the voice | Muse's music generation tool made five candidates (A to E). E was chosen (piano and violin), looped by `make_bgm_e.py` into `bgm-E-loop.wav`. That script is not in this repo. |
+| Assembly and QA | ffmpeg | ffmpeg driven by Python (the original `build_v3.py`), then ffmpeg frame samples in `qa-v3` and `qa-v3-en`. Publishing to YouTube and Bilibili was done through a browser, separately. |
 
-Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 24 kHz mono audio, which sounds dull on headphones.
+Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 24 kHz mono audio, which sounds dull on headphones. The cause is probably the voice tool's native rate; ask for a higher rate, or upsample before the mix.
+
+Episode 1's QA frames caught an English 8D2 subtitle overflow. They did not catch the Chinese end card that ran the full width of the frame, which the new text-fit check found. Keep both checks.
+
+## Choosing the video method
+
+Only about 31% of episode 1's screen time (13 of 39 shots) is AI video. The rest is stills with pushes, pans and crops. Keep it that way: use motion where a face or figure needs life, and nowhere else. Background notes and sources are in `references/video-generation-research.md` (unverified, mostly secondary sources).
+
+Before generating a whole episode's clips, run a **style test** on one approved face frame and one object frame:
+
+1. Try every candidate model, plus the no-AI option (layer the collage pieces and move them at different rates, a 2.5D parallax).
+2. Judge each result at the midframe and the last frame, not just the first. Reject any that drift toward a realistic face, add 3D shading, move the paper pieces as if they were soft, or add text.
+3. Write down the model name and version, the settings, the cost per second and the number of tries needed, in `storyboard.md`. Switching model between episodes changes the look and needs the user's yes.
+4. Prefer the cheapest option that passes. A shot that passes as a push-in on a still stays a push-in.
+
+The opening matters most: episode 1's hook is built from clips (1A, 1C) and 55% of viewers left within 3 s. Test the hook shot with and without motion before the episode is built, and see "Hypotheses to test in episode 2".
 
 ## Write the script
 
@@ -83,13 +102,14 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
 - Give every shot a motion strategy from the builder's grammar: `clip` (natural motion), `still` (slow push in), `freeze`, `pan`, `vpan` (tall strip image), and `sub` (staged parts with crossfades).
 - Plan the colour arc as small pushes from segment to segment, with no jump of a whole segment's colour between neighbouring shots.
 - Mark guard points and treat them as uncompressible. In `episode.json`, give the shot a `hold` (seconds) and a `guard` note. Episode 1 had two: a music-only tail of about 4 s where only a question mark breathes (5E), and a halo still held for 4 s (7A-2).
+- **Hook check.** Before gate 2, write down what the cover and title promise, then check that the first 3 seconds of each language deliver it, in words, not just mood. Episode 1's cover beat 77% of similar videos on Bilibili, yet 55.1% of viewers left within 3 s: the click worked and the opening did not hold. Put the check result in `storyboard.md`.
 - Write `storyboard.md` and pass gate 2.
 
 ## Produce the images and clips
 
 - Generate keyframes first, and pass gate 3 on the anchor face. Face shots inherit from it.
 - Cut the number of genuinely new images hard before generating. Reuse approved frames, crop regions out of them, and build composites whose newly drawn area stays under 40% (`episodes/ep01-chinese-room/build_composites*.py` show how).
-- Route shots with faces through image-to-video so the faces move naturally. Use stills with camera moves for objects, rooms and diagrams.
+- Route shots with faces through image-to-video (or the parallax alternative, see "Choosing the video method") so the faces move naturally. Use stills with camera moves for objects, rooms and diagrams.
 - Check the midframe of every generated clip. If it drifted toward a realistic face, regenerate it with the constraint line above and check the replacement the same way.
 - Check a source image's layout before writing crop boxes. Episode 1 lost time to a "four panel" image that was really four vertical strips. Those became `vpan` shots, not quadrant crops.
 - Write a disposition for every deviation from the storyboard (for example, a motion that became a push in) so the delivery note can disclose it honestly.
@@ -131,6 +151,19 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
 - The Bilibili file picker may resist automated upload. Hand the live browser to the user to pick the file, then take control back and finish the form.
 - Record the published links in `episode.json` → `published`.
 
+## Measure the result
+
+Detailed Bilibili data may not be kept forever, so record it on a schedule. Fill in `<episode>/results.md` (copy it from `episodes/_template/results.md`) at 48 hours, 7 days and 30 days:
+
+- Plays, and the share from non-followers.
+- Cover click-through rate against similar videos.
+- 3-second exit rate, and the average watch point as a share of the length.
+- The retention curve (留存分布) and the loss trend (流失趋势). Match each drop to the shot on screen at that second, using `timing-<lang>.md`. Save a screenshot of each chart.
+- Interaction rate (likes, coins, comments) and follower conversion.
+- YouTube: views, average view duration and the retention graph, the same way.
+
+State the sample size next to every number. Under about 100 plays, a drop of one or two viewers is an anecdote: write it as a hypothesis and do not change a rule because of it. Revisit the rules once an episode passes roughly 100 viewers, or two episodes can be compared.
+
 ## Episode 1 record
 
 - **The Chinese Room** (John Searle, 1980). 355.5 s in Chinese and 362.5 s in English, 39 shots per version, published to YouTube: https://www.youtube.com/watch?v=_cFOyDM56DM
@@ -140,3 +173,13 @@ Export narration at 44.1 or 48 kHz. The delivered Chinese file of episode 1 has 
   - The original builder started the English cut's first picture at 0.3 s instead of 0, so every English picture runs 0.3 s ahead of its narration.
   - The Chinese end card was as wide as the frame, so its box touched both edges.
   - In the English cut, the boxes behind the two-line question and the two-line end card overlapped, leaving a darker band.
+- **Day-2 results** (Bilibili, 76 plays, so not conclusive) are in `references/episode-1-results.md`.
+
+## Hypotheses to test in episode 2
+
+These come from episode 1's day-2 data. They are not rules yet.
+
+1. **The opening loses viewers who clicked.** 55.1% left within 3 s although the cover beat 77% of similar videos. Test an opening that states the question within the first 3 s, in the first words of the narration.
+2. **Viewers drop where the story turns abstract.** About 4 of the ~9 who left did so at 1:40 to 2:00 (segment 4, Searle and the computer analogy). Test whether keeping a concrete image on screen through the abstract argument holds them.
+3. **The longest shot may not matter.** Shot 2D (23.5 s) saw at most one drop. Don't shorten it on this evidence.
+4. **Viewers who stay, stay.** About 10% watched nearly to the end, and the curve held flat from about 2:10. Check whether that share grows with more plays.
