@@ -2,6 +2,7 @@
 
   new       copy the template into a new episode folder
   tts-text  write one .txt per narration segment for your TTS tool
+  voice     narrate with VoxCPM2 from voice.json (--design: audition voices first)
   measure   read the recorded segment lengths into episode.json
   timing    re-anchor shots to the narration; writes timing-<lang>.md
   mix       narration + music -> build/<lang>/mix.m4a
@@ -9,6 +10,7 @@
   qa        check streams, length and tail; extract review frames
 """
 import argparse
+import json
 import os
 import shutil
 import sys
@@ -17,6 +19,7 @@ from . import build as B
 from . import mix as M
 from . import qa as Q
 from . import timing as T
+from . import voice as V
 from .common import Episode, find_font
 
 TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "episodes", "_template")
@@ -25,14 +28,19 @@ TEMPLATE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 def main(argv=None):
     p = argparse.ArgumentParser(prog="python3 -m pipeline", description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("command", choices=["new", "tts-text", "measure", "timing", "mix", "build", "qa"])
+    p.add_argument("command", choices=["new", "tts-text", "voice", "measure", "timing", "mix", "build", "qa"])
     p.add_argument("episode", help="episode folder, e.g. episodes/ep02-trolley")
     p.add_argument("--lang", default="all")
     p.add_argument("--media", help="media folder (default: <episode>/media, or $EPISODE_MEDIA)")
     p.add_argument("--font", help="CJK font file for overlays and subtitles")
     p.add_argument("--limit", type=int, help="build: render only the first N shots")
     p.add_argument("--final-only", action="store_true", help="build: reuse silent.mp4, redo overlays")
-    p.add_argument("--force", action="store_true", help="build anyway with unresolved guardrails or overflowing text")
+    p.add_argument("--force", action="store_true", help="build anyway with unresolved guardrails or overflowing text; "
+                   "voice: replace existing narration")
+    p.add_argument("--segments", help="voice: read this file instead of segments.json (e.g. a draft script)")
+    p.add_argument("--only", help="voice: segment numbers to render, e.g. 1,5")
+    p.add_argument("--design", action="store_true", help="voice: read the opening in each described voice")
+    p.add_argument("--plan", action="store_true", help="voice: print chunks, tones and pauses; no model needed")
     a = p.parse_args(argv)
 
     if a.command == "new":
@@ -43,11 +51,24 @@ def main(argv=None):
         return
 
     ep = Episode(a.episode, a.media)
+    if a.segments:
+        with open(a.segments, encoding="utf-8") as f:
+            ep.segments = json.load(f)
     failed = False
     for lang in ep.languages(a.lang):
         if a.command == "tts-text":
             for f in M.tts_text(ep, lang):
                 print(f)
+            continue
+        if a.command == "voice":
+            only = {int(x) for x in a.only.split(",")} if a.only else None
+            if a.plan:
+                V.show_plan(ep, lang, only)
+            elif a.design:
+                for f in V.design(ep, lang):
+                    print(f)
+            else:
+                V.render(ep, lang, only, a.force)
             continue
         if a.command == "measure":
             print(lang, M.measure(ep, lang))

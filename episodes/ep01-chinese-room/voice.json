@@ -1,0 +1,199 @@
+{
+  "_note": "VoxCPM2 direction for segments-v3-draft.json. Each segment has a tone; a line (matched by the start of its sentence) can override the tone, add a pause after itself (seconds) or name a word to stress. Leave reference empty, run `voice --design`, listen, then set reference to the chosen file.",
+  "model": "openbmb/VoxCPM2",
+  "cfg_value": 2.0,
+  "inference_timesteps": 10,
+  "seed": 42,
+  "pause": {"sentence": 0.3, "question": 0.5},
+  "en": {
+    "voice": [
+      "A warm, calm male narrator in his thirties, clear and thoughtful, like talking to one friend",
+      "A warm, calm female narrator in her thirties, clear and thoughtful, like talking to one friend",
+      "A soft-spoken, curious narrator with a gentle low voice, relaxed and close to the microphone"
+    ],
+    "reference": "",
+    "reference_text": "",
+    "segments": [
+      {
+        "tone": "intrigued, a little hushed, unhurried",
+        "lines": [
+          {"match": "What if something", "pause": 0.7},
+          {"match": "It could explain love.", "tone": "light, lifting, listing", "pause": 0.2},
+          {"match": "It could write you a poem.", "tone": "light, lifting, listing", "pause": 0.2},
+          {"match": "It could comfort you", "tone": "light, lifting, listing", "pause": 0.6},
+          {"match": "And all the while", "tone": "quieter, slower, a little uneasy", "pause": 0.6},
+          {"match": "It's called the Chinese Room.", "stress": "Chinese Room"}
+        ]
+      },
+      {
+        "tone": "relaxed storyteller painting a scene, steady pace",
+        "lines": [
+          {"match": "And you don't know any Chinese.", "pause": 0.25},
+          {"match": "Not a word.", "tone": "dry, matter-of-fact", "pause": 0.6},
+          {"match": "And it's absurdly detailed.", "tone": "amused", "pause": 0.4},
+          {"match": "So that's what you do.", "pause": 0.45},
+          {"match": "A note comes in.", "tone": "even, rhythmic, a little mechanical", "pause": 0.2},
+          {"match": "You look it up.", "tone": "even, rhythmic, a little mechanical", "pause": 0.2},
+          {"match": "A note goes out.", "tone": "even, rhythmic, a little mechanical", "pause": 0.4}
+        ]
+      },
+      {
+        "tone": "light and a little playful",
+        "lines": [
+          {"match": "From the outside", "pause": 0.6},
+          {"match": "But inside, you still have no idea", "tone": "softer and slower"},
+          {"match": "You're just following the rules.", "tone": "plain and quiet"}
+        ]
+      },
+      {
+        "tone": "clear and engaged, explaining an idea",
+        "lines": [
+          {"match": "Searle's answer was, wait a second.", "tone": "slower, firm", "pause": 0.5},
+          {"match": "But is that the same", "stress": "same", "pause": 0.5},
+          {"match": "It's the gap between", "stress": "actually", "pause": 0.7},
+          {"match": "But this is exactly where", "tone": "slower, thoughtful"},
+          {"match": "Sounding fluent", "tone": "slower, thoughtful"}
+        ]
+      },
+      {
+        "tone": "warm, personal, inviting, slower",
+        "lines": [
+          {"match": "What do you think understanding", "stress": "you", "pause": 0.9},
+          {"match": "Now flip it around.", "pause": 0.4},
+          {"match": "So maybe language", "pause": 0.6},
+          {"match": "When you hear it", "tone": "slow, gentle, remembering"},
+          {"match": "Maybe you hear the crunch", "tone": "slow, gentle, remembering"},
+          {"match": "The sweetness", "tone": "slow, gentle, remembering", "pause": 0.5},
+          {"match": "Does it even need to?", "pause": 0.6},
+          {"match": "Take a few seconds", "tone": "very calm, quiet", "pause": 0.5},
+          {"match": "Because your answer", "tone": "very calm, quiet"}
+        ]
+      },
+      {
+        "tone": "brisker and lively, making the case for the other side",
+        "lines": [
+          {"match": "But what if the whole room does?", "stress": "whole", "pause": 0.7},
+          {"match": "One neuron doesn't get a joke.", "tone": "playful", "pause": 0.2},
+          {"match": "One neuron doesn't know your name.", "tone": "playful", "pause": 0.3},
+          {"match": "But wire up tens of billions", "tone": "building, a sense of wonder", "pause": 0.5},
+          {"match": "Maybe understanding belongs", "tone": "settling, calm"}
+        ]
+      },
+      {
+        "tone": "firm, steady and serious",
+        "lines": [
+          {"match": "You'd just be shuffling", "pause": 0.7},
+          {"match": "So that's the standoff.", "tone": "slow, weighty", "pause": 0.6}
+        ]
+      },
+      {
+        "tone": "reflective, slower, gentle",
+        "lines": [
+          {"match": "Or maybe that's just human bias.", "tone": "a little wry", "pause": 0.4},
+          {"match": "What it does is make", "pause": 0.4},
+          {"match": "Being able to produce", "pause": 0.5},
+          {"match": "Knowing what those words mean", "tone": "slow, quiet, deliberate"}
+        ]
+      },
+      {
+        "tone": "direct and warm, talking straight to the viewer",
+        "lines": [
+          {"match": "So here's my question for you.", "pause": 0.6},
+          {"match": "When AI gives a perfect answer", "tone": "slow, clear, deliberate", "pause": 0.9},
+          {"match": "Or maybe understanding", "tone": "soft and open, trailing off"}
+        ]
+      }
+    ]
+  },
+  "zh": {
+    "voice": [
+      "温暖平静的男声，三十岁左右，吐字清楚，像在跟一个朋友聊天",
+      "温暖平静的女声，三十岁左右，吐字清楚，像在跟一个朋友聊天",
+      "低沉柔和的声音，好奇、放松，像贴着麦克风轻声讲故事"
+    ],
+    "reference": "",
+    "reference_text": "",
+    "segments": [
+      {
+        "tone": "好奇，声音稍压低，不急不慢",
+        "lines": [
+          {"match": "有没有可能", "pause": 0.7},
+          {"match": "它能跟你聊什么是爱", "tone": "轻快，往上扬", "pause": 0.5},
+          {"match": "可在它里面", "tone": "更轻更慢，有点不安", "pause": 0.6},
+          {"match": "这个让人有点不舒服的想法", "stress": "中文房间"}
+        ]
+      },
+      {
+        "tone": "放松地讲故事，节奏平稳",
+        "lines": [
+          {"match": "可你不懂中文", "pause": 0.6},
+          {"match": "它写得细到离谱。", "tone": "带点好笑", "pause": 0.4},
+          {"match": "那你就照做。", "pause": 0.45},
+          {"match": "一张纸进来", "tone": "平稳，有节奏感，稍机械", "pause": 0.4}
+        ]
+      },
+      {
+        "tone": "轻松，带点俏皮",
+        "lines": [
+          {"match": "从外面看", "pause": 0.6},
+          {"match": "可在房间里", "tone": "更轻更慢"},
+          {"match": "你只是在照着规则办事。", "tone": "平淡，安静"}
+        ]
+      },
+      {
+        "tone": "清楚投入，像在讲道理",
+        "lines": [
+          {"match": "塞尔说：等一下。", "tone": "放慢，坚定", "pause": 0.5},
+          {"match": "可这跟知道这些符号", "pause": 0.5},
+          {"match": "这就是“看起来懂”", "stress": "真的懂", "pause": 0.7},
+          {"match": "但中文房间想让我们先停一停", "tone": "放慢，若有所思"}
+        ]
+      },
+      {
+        "tone": "温暖，亲近，像在邀请对方一起想，稍慢",
+        "lines": [
+          {"match": "你觉得，理解到底是什么？", "stress": "你", "pause": 0.9},
+          {"match": "反过来", "pause": 0.3},
+          {"match": "所以，语言可能不是全部。", "pause": 0.6},
+          {"match": "听到它", "tone": "慢，温柔，像在回忆", "pause": 0.5},
+          {"match": "它需要有吗？", "pause": 0.6},
+          {"match": "先别急着选。", "tone": "非常平静，轻声", "pause": 0.4},
+          {"match": "停几秒，想一想。", "tone": "非常平静，轻声", "pause": 0.5},
+          {"match": "你的答案", "tone": "非常平静，轻声"}
+        ]
+      },
+      {
+        "tone": "更明快，有精神，在替另一方说话",
+        "lines": [
+          {"match": "但会不会，整个房间是懂的？", "stress": "整个", "pause": 0.7},
+          {"match": "一个神经元，听不懂笑话。", "tone": "俏皮", "pause": 0.2},
+          {"match": "一个神经元，也不知道你叫什么。", "tone": "俏皮", "pause": 0.3},
+          {"match": "可是几百亿个神经元", "tone": "渐渐展开，带点惊叹", "pause": 0.5},
+          {"match": "理解，也许属于整个系统。", "tone": "收住，平静"}
+        ]
+      },
+      {
+        "tone": "坚定，沉稳，严肃",
+        "lines": [
+          {"match": "你还是只是在搬弄符号", "pause": 0.7},
+          {"match": "僵局就在这儿。", "tone": "慢，有分量", "pause": 0.6}
+        ]
+      },
+      {
+        "tone": "沉思，放慢，温和",
+        "lines": [
+          {"match": "当然，这也可能只是人类的偏见。", "tone": "带点自嘲", "pause": 0.4},
+          {"match": "它只是把一个区别", "pause": 0.5},
+          {"match": "知道这些词是什么意思", "tone": "慢，轻，一字一句"}
+        ]
+      },
+      {
+        "tone": "直接，温暖，对着观众说",
+        "lines": [
+          {"match": "所以，最后这个问题留给你", "tone": "慢，清楚，一字一句", "pause": 0.9},
+          {"match": "也许，当模式复杂到一定程度", "tone": "轻，开放，渐渐收尾"}
+        ]
+      }
+    ]
+  }
+}

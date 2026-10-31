@@ -10,6 +10,7 @@ Each episode is one folder under `episodes/`: `segments.json` (the narration), `
 ```
 python3 -m pipeline new episodes/ep02-<slug>       # from episodes/_template
 python3 -m pipeline tts-text episodes/ep02-<slug>  # one .txt per segment for the TTS
+python3 -m pipeline voice    episodes/ep02-<slug>  # or narrate with VoxCPM2 from voice.json
 python3 -m pipeline measure  episodes/ep02-<slug>  # recorded lengths -> episode.json
 python3 -m pipeline timing   episodes/ep02-<slug>  # shots re-anchored; timing-<lang>.md
 python3 -m pipeline mix      episodes/ep02-<slug>  # narration + music
@@ -113,6 +114,18 @@ The opening matters most: episode 1's hook is built from clips (1A, 1C) and 55% 
 - Check the midframe of every generated clip. If it drifted toward a realistic face, regenerate it with the constraint line above and check the replacement the same way.
 - Check a source image's layout before writing crop boxes. Episode 1 lost time to a "four panel" image that was really four vertical strips. Those became `vpan` shots, not quadrant crops.
 - Write a disposition for every deviation from the storyboard (for example, a motion that became a push in) so the delivery note can disclose it honestly.
+
+## Direct the narration (VoxCPM2)
+
+`voice` narrates from `<episode>/voice.json`, which directs the delivery. VoxCPM2 has no SSML, so:
+
+- **Tone** is a short natural-language style, per segment and optionally per line: "(warm, personal, slower)". Lines are matched by the start of their sentence.
+- **Pauses** are real silence, in seconds, after a line. Defaults: 0.3 s after a sentence, 0.5 s after a question.
+- **Stress** is a style hint ("stress the word ...", "重读…"). The model follows it only some of the time, so put the stressed word where the sentence lands on it anyway, and listen.
+
+Steps: `voice --plan` prints every chunk with its tone and pause and needs no model. `voice --design` reads the opening in each described voice (three seeds each) into `media/voice/`. Pick one, set it as `reference`, then run `voice` (`--only 1,5` to redo segments). Every chunk is cloned from that reference, so the voice stays the same across chunks. Each file gets a `.chunks.json` with every chunk's start and end. Output is 48 kHz.
+
+Needs `pip install voxcpm soundfile` on Python 3.10–3.12, the weights from huggingface.co (or ModelScope), and in practice a GPU with about 8 GB of memory. Episode 1's `voice.json` directs the v3 draft script: `voice episodes/ep01-chinese-room --segments episodes/ep01-chinese-room/segments-v3-draft.json --media <new folder>`.
 
 ## Re-anchor timing to the recorded narration
 
