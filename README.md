@@ -11,11 +11,33 @@ Episode 1: [Could a Machine Understand You? — The Chinese Room](https://www.yo
 
 ## Run it
 
+You need Git, Python 3 and ffmpeg, a free tool that renders video. ffmpeg must be on your `PATH`, which means your terminal can run the `ffmpeg` command.
+
+1. Install ffmpeg. On macOS, run `brew install ffmpeg`. On Ubuntu or Debian, run `sudo apt install ffmpeg`. On Windows, run `winget install Gyan.FFmpeg` and then open a new terminal. Check it with `ffmpeg -version`.
+2. Download the code, install the Python packages, run the tests, and build episode 1's timing tables.
+
+**macOS and Linux**
+
 ```bash
-python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # plus ffmpeg on PATH
+git clone https://github.com/yulinhuang0801/paper-collage-philosophy-video.git
+cd paper-collage-philosophy-video
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m unittest discover tests
 .venv/bin/python -m pipeline timing episodes/ep01-chinese-room
 ```
+
+**Windows (PowerShell)**
+
+```powershell
+git clone https://github.com/yulinhuang0801/paper-collage-philosophy-video.git
+cd paper-collage-philosophy-video
+py -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+.venv\Scripts\python -m unittest discover tests
+.venv\Scripts\python -m pipeline timing episodes/ep01-chinese-room
+```
+
+On Ubuntu or Debian, run `sudo apt install python3-venv` first if the `venv` step fails.
 
 Rendering needs the episode's media (frames, clips, audio) in `episodes/<episode>/media/` or under `--media DIR`. Media is not in git.
 
